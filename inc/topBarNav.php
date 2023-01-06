@@ -168,7 +168,7 @@
                     <li class="nav-item">
                         <a href="./?page=submit-archive"
                            class="nav-link <?= isset($page) && $page == 'submit-archive' ? "active" : "" ?>">Submit
-                            Thesis/Capstone</a>
+                            Document</a>
                     </li>
                 <?php endif; ?>
             </ul>
