@@ -51,7 +51,7 @@
             <span class="mr-2  text-white"><i class="fa fa-phone mr-1"></i> <?= $_settings->info('contact') ?></span>
         </div>
         <div>
-            <?php if ($_settings->userdata('id') > 0): ?>
+            <?php if ($_settings->userdata('id') > 0):?>
                 <span class="mx-2"><img src="<?= validate_image($_settings->userdata('avatar')) ?>" alt="User Avatar"
                                         id="student-img-avatar"></span>
                 <span class="mx-2">Howdy, <?= !empty($_settings->userdata('email')) ? $_settings->userdata('email') : $_settings->userdata('username') ?></span>
@@ -65,7 +65,7 @@
                       <span class="d-inline-block d-md-none">
                         <i class="fas fa-light fa-user-plus"></i>
                       </span>
-                    <span class="d-none d-md-inline-block">Register</span>
+                    <span class="d-none d-md-inline-block" id="accountNotHere">Register</span>
 
                 </a>
                 <a href="./login.php" class="mx-2 text-light me-2">
@@ -168,7 +168,7 @@
                     <li class="nav-item">
                         <a href="./?page=submit-archive"
                            class="nav-link <?= isset($page) && $page == 'submit-archive' ? "active" : "" ?>">Submit
-                            Thesis/Capstone</a>
+                            Document</a>
                     </li>
                 <?php endif; ?>
             </ul>
