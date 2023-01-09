@@ -22,19 +22,19 @@
     /* #login{
       flex-direction:column !important
     } */
-    #login{
-        direction:rtl
-    }
-    #login > *{
-        direction:ltr
-    }
-    #logo-img{
-        height:150px;
-        width:150px;
-        object-fit:scale-down;
-        object-position:center center;
-        border-radius:100%;
-    }
+    /*#login{*/
+    /*    direction:rtl*/
+    /*}*/
+    /*#login > *{*/
+    /*    direction:ltr*/
+    /*}*/
+    /*#logo-img{*/
+    /*    height:150px;*/
+    /*    width:150px;*/
+    /*    object-fit:scale-down;*/
+    /*    object-position:center center;*/
+    /*    border-radius:100%;*/
+    /*}*/
     /* #login .col-7,#login .col-5{
       width: 100% !important;
       max-width:unset !important
@@ -46,16 +46,16 @@
       </script>
       <?php endif;?> 
 <div class="h-100 d-flex  align-items-center w-100" id="login">
-    <div class="col-7 h-100 d-flex align-items-center justify-content-center">
-      <div class="w-100">
-        <center><img src="<?= validate_image($_settings->info('logo')) ?>" alt="" id="logo-img"></center>
-        <h1 class="text-center py-5 login-title"><b><?php echo $_settings->info('name') ?> - User</b></h1>
-      </div>
-      
-    </div>
-    <div class="col-5 h-100 bg-gradient bg-navy">
-        <div class="w-100 d-flex justify-content-center align-items-center h-100 text-navy">
-            <div class="card card-outline card-primary rounded-0 shadow col-lg-10 col-md-10 col-sm-5">
+<!--    <div class="col-7 h-100 d-flex align-items-center justify-content-center">-->
+<!--      <div class="w-100">-->
+<!--        <center><img src="--><?//= validate_image($_settings) ?><!--" alt="" id="logo-img"></center>-->
+<!--        <h1 class="text-center py-5 login-title"><b>--><?php //echo $_settings->info('name') ?><!-- - User</b></h1>-->
+<!--      </div>-->
+<!--      -->
+<!--    </div>-->
+    <div class="col h-100 bg-gradient bg-navy">
+        <div class="w-100 mx-auto d-flex justify-content-center align-items-center h-100 text-navy">
+            <div class="card card-outline card-primary rounded-0 shadow">
                 <div class="card-header">
                     <h5 class="card-title text-center text-dark"><b>Login</b></h5>
                 </div>

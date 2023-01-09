@@ -2,29 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="891441eb-d28a-4d28-bac1-c065b4b208bd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/about_us.html" beforeDir="false" afterPath="$PROJECT_DIR$/about_us.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/otas_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/otas_db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/topBarNav.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/topBarNav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gdtest.php" beforeDir="false" afterPath="$PROJECT_DIR$/gdtest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/submit-archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/submit-archive.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banners/archive-10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banners/archive-11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banners/archive-2.png" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/banners/archive-2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banners/archive-4.png" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/banners/archive-4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banners/archive-6.png" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/banners/archive-6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banners/archive-7.png" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/banners/archive-7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banners/archive-8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/banners/archive-9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/pdf/archive-10.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/pdf/archive-11.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/pdf/archive-2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/pdf/archive-2.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/pdf/archive-4.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/pdf/archive-4.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/pdf/archive-6.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/pdf/archive-6.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/pdf/archive-7.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/uploads/pdf/archive-7.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/pdf/archive-8.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploads/pdf/archive-9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/view_archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/view_archive.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/welcome.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +47,7 @@
       <option name="presentableId" value="Default" />
       <updated>1672901190535</updated>
       <workItem from="1672901192479" duration="6924000" />
-      <workItem from="1673094651773" duration="2502000" />
+      <workItem from="1673094651773" duration="18476000" />
     </task>
     <servers />
   </component>

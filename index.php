@@ -41,6 +41,7 @@
     left: 33.33%;
     bottom: 0;
   }
+
 </style>
 <?php require_once('inc/header.php') ?>
 
@@ -61,7 +62,7 @@
           <h1 class="w-100 text-center site-title">
             <?php echo $_settings->info('name') ?>
           </h1>
-          <a href="./?page=projects" class="btn btn-lg btn-light rounded-pill w-25" id="enrollment"><b>Explore
+          <a href="./?page=projects" class="btn btn btn-light rounded-pill w-25" id="enrollment"><b>Explore
               Projects</b></a>
         </div>
       </div>
@@ -141,5 +142,11 @@
     <!-- /.content-wrapper -->
     <?php require_once('inc/footer.php') ?>
 </body>
-
+<style>
+    .site-title {
+        font-size: calc(1.425rem + 2.1vw) !important;
+        color: white !important;
+        text-shadow: 4px 5px 3px #68717a !important;
+    }
+</style>
 </html>

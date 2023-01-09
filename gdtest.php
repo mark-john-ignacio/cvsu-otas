@@ -1,4 +1,12 @@
 <?php
+
+if (extension_loaded('pdflib')) {
+    echo "PDFlib is active and available for use.";
+} else {
+    echo "PDFlib is not active or not installed.";
+}
+
+
 if ($db->connect_error) {
     die("Connection to MySQL database failed: " . $db->connect_error);
 } else {
