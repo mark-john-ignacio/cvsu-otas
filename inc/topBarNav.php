@@ -37,6 +37,9 @@
             width: 25em;
             left: -20em;
         }
+        #top-Nav a.nav-link.active:before{
+            left: 0;
+        }
 
         #login-nav {
 
@@ -52,11 +55,11 @@
         </div>
         <div>
             <?php if ($_settings->userdata('id') > 0):?>
-                <span class="mx-2"><img src="<?= validate_image($_settings->userdata('avatar')) ?>" alt="User Avatar"
-                                        id="student-img-avatar"></span>
-                <span class="mx-2">Howdy, <?= !empty($_settings->userdata('email')) ? $_settings->userdata('email') : $_settings->userdata('username') ?></span>
+                <span class="mx-2"><a href="./?page=profile"><img src="<?= validate_image($_settings->userdata('avatar')) ?>" alt="User Avatar"
+                                        id="student-img-avatar"></a></span>
+                <span class="mx-2 d-none d-md-inline-block">Hello! <?= !empty($_settings->userdata('email')) ? $_settings->userdata('email') : $_settings->userdata('username') ?></span>
                 <span class="mx-1"><a href="<?= base_url . 'classes/Login.php?f=student_logout' ?>"><i
-                                class="fa fa-power-off"></i></a></span>
+                                class="fas fa-power-off"></i></a></span>
             <?php else: ?>
 
 
