@@ -1,4 +1,29 @@
+<form action="" method="post">
+    <div class="form-group">
+        <label for="curriculum_select">Select Curriculum:</label>
+        <select class="form-control" id="curriculum_select" name="curriculum">
+            <?php
+            require_once('config.php');
+            $result = $conn->query("SELECT id, name FROM `curriculum_list` WHERE status = 1 ORDER BY `name` ASC");
+            while ($row = $result->fetch_assoc()) {
+                echo "<option value='{$row['id']}'>{$row['name']}</option>";
+            }
+            ?>
+        </select>
+    </div>
+    <input type="submit" value="Submit">
+</form>
+
 <?php
+if(isset($_POST['curriculum'])){
+    $curriculum_id = $_POST['curriculum'];
+    // do something with the selected curriculum's id
+    echo $curriculum_id;
+}
+?>
+
+<?php
+
 
 
 

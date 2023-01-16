@@ -10,6 +10,9 @@
 <div class="card card-outline card-primary">
 	<div class="card-header">
 		<h3 class="card-title">List of Thesis Archives</h3>
+        <div class="card-tools">
+            <a href="./?page=archives/submit_archive" id="create_new" class="btn btn-flat btn-sm btn-primary"><span class="fas fa-plus"></span>Add New Archive</a>
+        </div>
 	</div>
 	<div class="card-body">
 		<div class="container-fluid">
