@@ -1,16 +1,16 @@
-<?php 
-$user = $conn->query("SELECT s.*,d.name as department, c.name as curriculum,CONCAT(lastname,', ',firstname,' ',middlename) as fullname FROM student_list s inner join department_list d on s.department_id = d.id inner join curriculum_list c on s.curriculum_id = c.id where s.id ='{$_settings->userdata('id')}'");
+<?php
+$user = $conn->query("SELECT s.*,d.name as department, c.name as curriculum,CONCAT(lastname,', ',firstname,' ',middlename) as fullname FROM student_list s inner join department_list d on s.department_id = d.id inner join curriculum_list c on s.curriculum_id = c.id where s.id ='{$_GET['id']}'");
 foreach($user->fetch_array() as $k =>$v){
     $$k = $v;
 }
 ?>
 <style>
     .student-img{
-		object-fit:scale-down;
-		object-position:center center;
+        object-fit:scale-down;
+        object-position:center center;
         height:200px;
         width:200px;
-	}
+    }
 </style>
 <div class="content py-4">
     <div class="card card-outline card-primary shadow rounded-0">
@@ -20,7 +20,7 @@ foreach($user->fetch_array() as $k =>$v){
         <div class="card-body rounded-0">
             <div class="container-fluid">
                 <form action="" id="update-form">
-                    <input type="hidden" name="id" value="<?= $_settings->userdata('id') ?>">
+                    <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -45,7 +45,7 @@ foreach($user->fetch_array() as $k =>$v){
                     </div>
                     <div class="row">
                         <div class="form-group col-auto">
-                        <label for="" class="control-label text-navy">Gender</label>
+                            <label for="" class="control-label text-navy">Gender</label>
                         </div>
                         <div class="form-group col-auto">
                             <div class="custom-control custom-radio">
@@ -60,7 +60,7 @@ foreach($user->fetch_array() as $k =>$v){
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -76,7 +76,7 @@ foreach($user->fetch_array() as $k =>$v){
                                 <label for="cpassword" class="control-label text-navy">Confirm New Password</label>
                                 <input type="password" id="cpassword" placeholder="Confirm Password" class="form-control form-control-border">
                             </div>
-                            <small class='text-muted'>Leave the New Password and Confirm New Password Blank if you don't wish to change your password.</small>
+                            <small class='text-muted'>Leave the New Password and Confirm New Password Blank if you don't wish to change the password.</small>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
@@ -92,10 +92,10 @@ foreach($user->fetch_array() as $k =>$v){
                     <hr>
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="oldpassword">Please Enter your Current Password</label>
-                                <input type="password" name="oldpassword" id="oldpassword" placeholder="Current Password" class="form-control form-control-border" required>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                                <label for="oldpassword">Please Enter your Current Password</label>-->
+<!--                                <input type="password" name="oldpassword" id="oldpassword" placeholder="Current Password" class="form-control form-control-border">-->
+<!--                            </div>-->
                         </div>
                     </div>
                     <div class="row">
@@ -113,27 +113,27 @@ foreach($user->fetch_array() as $k =>$v){
 </div>
 <script>
     function displayImg(input,_this) {
-	    if (input.files && input.files[0]) {
-	        var reader = new FileReader();
-	        reader.onload = function (e) {
-	        	$('#cimg').attr('src', e.target.result);
-	        }
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#cimg').attr('src', e.target.result);
+            }
 
-	        reader.readAsDataURL(input.files[0]);
-	    }else{
+            reader.readAsDataURL(input.files[0]);
+        }else{
             $('#cimg').attr('src', "<?= validate_image(isset($avatar) ? $avatar : "") ?>");
         }
-	}
+    }
     $(function(){
         // Update Form Submit
         $('#update-form').submit(function(e){
             e.preventDefault()
             var _this = $(this)
-                $(".pop-msg").remove()
-                $('#password, #cpassword').removeClass("is-invalid")
+            $(".pop-msg").remove()
+            $('#password, #cpassword').removeClass("is-invalid")
             var el = $("<div>")
-                el.addClass("alert pop-msg my-2")
-                el.hide()
+            el.addClass("alert pop-msg my-2")
+            el.hide()
             if($("#password").val() != $("#cpassword").val()){
                 el.addClass("alert-danger")
                 el.text("Password does not match.")
@@ -144,7 +144,7 @@ foreach($user->fetch_array() as $k =>$v){
             }
             start_loader();
             $.ajax({
-                url:_base_url_+"classes/Users.php?f=save_student",
+                url:_base_url_+"classes/Users.php?f=edit_student",
                 data: new FormData($(this)[0]),
                 cache: false,
                 contentType: false,
@@ -162,7 +162,7 @@ foreach($user->fetch_array() as $k =>$v){
                 },
                 success:function(resp){
                     if(resp.status == 'success'){
-                        location.href= "./?page=profile"
+                        location.href= "<?php echo base_url ?>/admin/?page=students"
                     }else if(!!resp.msg){
                         el.text(resp.msg)
                         el.addClass("alert-danger")

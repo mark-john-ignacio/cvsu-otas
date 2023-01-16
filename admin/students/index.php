@@ -61,12 +61,14 @@
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item view_details" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> view</a>
+				                    <a class="dropdown-item view_details" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
 				                    <div class="dropdown-divider"></div>
 									<?php if($row['status'] != 1): ?>
 				                    <a class="dropdown-item verify_user" href="javascript:void(0)" data-id="<?= $row['id'] ?>"  data-name="<?= $row['email'] ?>"><span class="fa fa-check text-primary"></span> Verify</a>
 				                    <div class="dropdown-divider"></div>
 									<?php endif; ?>
+                                      <a class="dropdown-item delete_data" href="?page=students/manage_students&id=<?php echo $row['id'] ?>"><span class="fas fa-pencil-alt text-primary"></span> Edit</a>
+                                      <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"  data-name="<?= $row['email'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
 				                  </div>
 							</td>

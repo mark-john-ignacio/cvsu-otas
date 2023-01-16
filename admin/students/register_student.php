@@ -155,7 +155,7 @@
                 dataType:'json',
                 error:err=>{
                     console.log(err)
-                    el.text("An error occured while saving the data")
+                    el.text("An error occurred while saving the data")
                     el.addClass("alert-danger")
                     _this.prepend(el)
                     el.show('slow')
@@ -170,7 +170,7 @@
                         _this.prepend(el)
                         el.show('show')
                     }else{
-                        el.text("An error occured while saving the data")
+                        el.text("An error occurred while saving the data")
                         el.addClass("alert-danger")
                         _this.prepend(el)
                         el.show('show')

@@ -30,7 +30,7 @@
                 dataType:"json",
                 error:err=>{
                     console.log(err)
-                    alert_taost("An error occured while saving the data,", "error")
+                    alert_taost("An error occurred while saving the data,", "error")
                     end_loader()
                 },
                 success:function(resp){

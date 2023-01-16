@@ -1,5 +1,7 @@
 <?php
 
+
+
 if (extension_loaded('pdflib')) {
     echo "PDFlib is active and available for use.";
 } else {
