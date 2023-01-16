@@ -63,19 +63,19 @@
             <?php else: ?>
 
 
-                <a href="./register.php" class="mx-2 text-light me-2 ">
-
-                      <span class="d-inline-block d-md-none">
-                        <i class="fas fa-light fa-user-plus"></i>
-                      </span>
-                    <span class="d-none d-md-inline-block" id="accountNotHere">Register</span>
-
-                </a>
+<!--                <a href="./register.php" class="mx-2 text-light me-2 ">-->
+<!---->
+<!--                      <span class="d-inline-block d-md-none">-->
+<!--                        <i class="fas fa-light fa-user-plus"></i>-->
+<!--                      </span>-->
+<!--                    <span class="d-none d-md-inline-block" id="accountNotHere">Register</span>-->
+<!---->
+<!--                </a>-->
                 <a href="./login.php" class="mx-2 text-light me-2">
                     <span class="d-inline-block d-md-none">
                         <i class="fas fa-light fa-user"></i>
                       </span>
-                    <span class="d-none d-md-inline-block">Student Log-in</span>
+                    <span class="d-none d-md-inline-block" id="accountNotHere">Student Log-in</span>
                 </a>
 
                 <a href="./admin" class="mx-2 text-light">

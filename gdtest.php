@@ -26,6 +26,7 @@ $domain = $_SERVER['SERVER_NAME'];
 $script_path = $_SERVER['PHP_SELF'];
 
 // Get the base URL
+global $base_url;
 $base_url = $protocol . $domain . $script_path;
 
 // Print the base URL

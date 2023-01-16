@@ -10,6 +10,9 @@
 <div class="card card-outline card-primary">
 	<div class="card-header">
 		<h3 class="card-title">List of Students</h3>
+        <div class="card-tools">
+            <a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-sm btn-primary"><span class="fas fa-plus"></span>Add New Student</a>
+        </div>
 	</div>
 	<div class="card-body">
 		<div class="container-fluid">
@@ -77,6 +80,10 @@
 </div>
 <script>
 	$(document).ready(function(){
+        $('#create_new').click(function(){
+            uni_modal("Register New Student","students/register_student.php")
+        })
+
 		$('.delete_data').click(function(){
 			_conf("Are you sure to delete <b>"+$(this).attr('data-name')+"</b> from Student List permanently?","delete_user",[$(this).attr('data-id')])
 		})

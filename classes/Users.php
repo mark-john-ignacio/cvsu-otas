@@ -207,7 +207,7 @@ Class Users extends DBConnection {
 						imagedestroy($gdImg);
 						imagedestroy($t_image);
 				}else{
-				$resp['msg'].=" But Image failed to upload due to unkown reason.";
+				$resp['msg'].=" But Image failed to upload due to unknown reason.";
 				}
 			}
 			if(isset($uploaded_img)){
