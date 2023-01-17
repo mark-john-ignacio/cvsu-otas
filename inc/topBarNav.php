@@ -51,7 +51,7 @@
 <nav class="bg-navy w-100 px-2 py-1 position-fixed top-0" id="login-nav">
     <div class="d-flex justify-content-between w-100">
         <div>
-            <span class="mr-2  text-white"><i class="fa fa-phone mr-1"></i> <?= $_settings->info('contact') ?></span>
+
         </div>
         <div>
             <?php if ($_settings->userdata('id') > 0):?>
@@ -94,7 +94,7 @@
     <div class="container">
         <a href="./" class="navbar-brand">
             <img src="<?php echo validate_image($_settings->info('logo')) ?>" alt="Site Logo"
-                 class="brand-image img-circle elevation-3" style="opacity: .8">
+                 class="brand-image" style="opacity: .8">
             <span><?= $_settings->info('short_name') ?></span>
         </a>
 
@@ -156,10 +156,7 @@
                         <?php endwhile; ?>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="./?page=about" class="nav-link <?= isset($page) && $page == 'about' ? "active" : "" ?>">About
-                        Us</a>
-                </li>
+
                 <!-- <li class="nav-item">
                   <a href="#" class="nav-link">Contact</a>
                 </li> -->
@@ -168,18 +165,17 @@
                         <a href="./?page=profile"
                            class="nav-link <?= isset($page) && $page == 'profile' ? "active" : "" ?>">Profile</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="./?page=submit-archive"
-                           class="nav-link <?= isset($page) && $page == 'submit-archive' ? "active" : "" ?>">Submit
-                            Document</a>
-                    </li>
                 <?php endif; ?>
+                <li class="nav-item">
+                    <a href="./?page=about" class="nav-link <?= isset($page) && $page == 'about' ? "active" : "" ?>">About
+                        Us</a>
+                </li>
             </ul>
 
 
         </div>
         <!-- Right navbar links -->
-        <div class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+        <div class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto mr-2">
             <a href="javascript:void(0)" class="text-navy" id="search_icon"><i class="fa fa-search"></i></a>
             <div class="position-relative">
                 <div id="search-field" class="position-absolute">

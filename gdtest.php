@@ -1,3 +1,9 @@
+<?php require_once('./config.php'); ?>
+<?php
+print_r($_settings);
+?>
+
+
 <form action="" method="post">
     <div class="form-group">
         <label for="curriculum_select">Select Curriculum:</label>
