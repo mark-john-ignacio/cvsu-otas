@@ -4,7 +4,7 @@
     <list default="true" id="891441eb-d28a-4d28-bac1-c065b4b208bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/archives/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/archives/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/students/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/students/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/archives/view_archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/archives/view_archive.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +51,7 @@
       <workItem from="1672901192479" duration="6924000" />
       <workItem from="1673094651773" duration="27806000" />
       <workItem from="1673797068115" duration="9071000" />
-      <workItem from="1673849186499" duration="19793000" />
+      <workItem from="1673849186499" duration="20759000" />
     </task>
     <servers />
   </component>

@@ -1,3 +1,4 @@
+<?php require_once(realpath(__DIR__ . '/../../') . '/config.php'); ?>
 <?php
 if (isset($_GET['id']) && $_GET['id'] > 0) {
     $qry = $conn->query("SELECT a.* FROM `archive_list` a where a.id = '{$_GET['id']}'");

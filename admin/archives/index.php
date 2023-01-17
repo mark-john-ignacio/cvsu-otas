@@ -1,3 +1,4 @@
+<?php require_once(realpath(__DIR__ . '/../../') . '/config.php'); ?>
 <style>
     .img-avatar{
         width:45px;
@@ -70,7 +71,7 @@
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item" href="<?= base_url ?>/?page=view_archive&id=<?php echo $row['id'] ?>" target="_blank"><span class="fa fa-external-link-alt text-gray"></span> View</a>
+				                    <a class="dropdown-item view_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>" data-status="<?php echo $row['status'] ?>"><span class="fa fa-external-link-alt text-gray"></span> View</a>
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item update_status" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>" data-status="<?php echo $row['status'] ?>"><span class="fa fa-check text-dark"></span> Update Status</a>
 									<div class="dropdown-divider"></div>
@@ -89,8 +90,8 @@
 </div>
 <script>
 	$(document).ready(function(){
-		$('.verified').click(function(){
-			_conf("Are you sure to verify this enrollee Request?","verified",[$(this).attr('data-id')])
+		$('.view_data').click(function(){
+            uni_modal("View Details","archives/view_archive.php?&id="+$(this).attr('data-id'))
 		})
 		$('.delete_data').click(function(){
 			_conf("Are you sure to delete this project permanently?","delete_archive",[$(this).attr('data-id')])
