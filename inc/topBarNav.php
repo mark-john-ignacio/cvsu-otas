@@ -51,7 +51,9 @@
 <nav class="bg-navy w-100 px-2 py-1 position-fixed top-0" id="login-nav">
     <div class="d-flex justify-content-between w-100">
         <div>
-
+            <?php if ($_settings->userdata('id') == 9999):?>
+            <a href="<?= base_url . '/admin' ?>" class="text-white">Dashboard</a>
+            <?php endif; ?>
         </div>
         <div>
             <?php if ($_settings->userdata('id') > 0):?>
