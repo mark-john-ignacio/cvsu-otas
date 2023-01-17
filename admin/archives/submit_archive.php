@@ -8,11 +8,11 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $$k = $v;
         }
     }
-    if (isset($student_id)) {
-        if ($student_id != $_settings->userdata('id')) {
-            echo "<script> alert('You don\'t have an access to this page'); location.replace('./'); </script>";
-        }
-    }
+//    if (isset($student_id)) {
+//        if ($student_id != $_settings->userdata('id')) {
+//            echo "<script> alert('You don\'t have an access to this page'); location.replace('./'); </script>";
+//        }
+//    }
 }
 ?>
 <style>
@@ -131,10 +131,10 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="form-group text-center">
-                                <button class="btn btn-default bg-navy btn-flat">Submit</button>
-                                <a href="./?page=profile" class="btn btn-light border btn-flat"> Cancel</a>
-                            </div>
+<!--                            <div class="form-group text-center">-->
+<!--                                <button class="btn btn-default bg-navy btn-flat">Submit</button>-->
+<!--                                <a href="./?page=profile" class="btn btn-light border btn-flat"> Cancel</a>-->
+<!--                            </div>-->
                         </div>
                     </div>
                 </form>

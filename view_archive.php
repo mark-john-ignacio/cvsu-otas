@@ -48,7 +48,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
                     <hr>
                     <center>
                         <img src="<?= validate_image(isset($banner_path) ? $banner_path : "") ?>" alt="Banner Image"
-                             id="banner-img" class="img-fluid border bg-gradient-dark">
+                             id="banner-img" class="img-fluid border bg-white border-0">
                     </center>
                     <fieldset>
                         <legend class="text-navy">Project Year:</legend>
@@ -68,18 +68,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
                             <large><?= isset($members) ? html_entity_decode($members) : "" ?></large>
                         </div>
                     </fieldset>
-                    <fieldset>
-                        <legend class="text-navy">Project Document:</legend>
-                        <div class="pl-4">
 
-                            <iframe src="<?= isset($document_path) ? base_url . $document_path : "" ?>" frameborder="0"
-                                    id="document_field" class="text-center w-100">Loading Document ...
-                            </iframe>
-                            <div class="alert alert-warning" role="alert" style="display: none;" id="document_field_alert">
-                                Please log in to view document
-                            </div>
-                        </div>
-                    </fieldset>
 
                 </div>
             </div>

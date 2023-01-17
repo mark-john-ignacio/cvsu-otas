@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="891441eb-d28a-4d28-bac1-c065b4b208bd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/inc/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/inc/navigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/navigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/navigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/topBarNav.php" beforeDir="false" afterPath="$PROJECT_DIR$/inc/topBarNav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/archives/submit_archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/archives/submit_archive.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/archives/view_archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/archives/view_archive.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view_archive.php" beforeDir="false" afterPath="$PROJECT_DIR$/view_archive.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

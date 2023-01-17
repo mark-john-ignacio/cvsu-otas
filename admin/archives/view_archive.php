@@ -118,13 +118,4 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
     }
 </script>
 
-<script>
-    var span = document.querySelector('#accountNotHere');
-
-    if (span) {
-        document.querySelector('#document_field').remove();
-        document.querySelector('#document_field_alert').style.display = 'block';
-    }
-</script>
-
 <?php
