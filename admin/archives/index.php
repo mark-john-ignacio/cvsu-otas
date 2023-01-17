@@ -74,6 +74,8 @@
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item update_status" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>" data-status="<?php echo $row['status'] ?>"><span class="fa fa-check text-dark"></span> Update Status</a>
 									<div class="dropdown-divider"></div>
+                                      <a class="dropdown-item edit_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>" data-status="<?php echo $row['status'] ?>"><span class="fa fa-pen-alt text-dark"></span> Edit</a>
+                                      <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
 				                  </div>
 							</td>
@@ -95,6 +97,9 @@
 		})
 		$('.update_status').click(function(){
             uni_modal("Update Details","archives/update_status.php?id="+$(this).attr('data-id')+"&status="+$(this).attr('data-status'))
+        })
+        $('.edit_data').click(function(){
+            uni_modal("Update Details","archives/submit_archive.php?id="+$(this).attr('data-id'))
         })
 		$('.table td,.table th').addClass('py-1 px-2 align-middle')
 		$('.table').dataTable({

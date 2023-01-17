@@ -67,7 +67,7 @@
 				                    <a class="dropdown-item verify_user" href="javascript:void(0)" data-id="<?= $row['id'] ?>"  data-name="<?= $row['email'] ?>"><span class="fa fa-check text-primary"></span> Verify</a>
 				                    <div class="dropdown-divider"></div>
 									<?php endif; ?>
-                                      <a class="dropdown-item delete_data" href="?page=students/manage_students&id=<?php echo $row['id'] ?>"><span class="fas fa-pencil-alt text-primary"></span> Edit</a>
+                                      <a class="dropdown-item" href="?page=students/manage_students&id=<?php echo $row['id'] ?>"><span class="fas fa-pencil-alt text-primary"></span> Edit</a>
                                       <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"  data-name="<?= $row['email'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
 				                  </div>
