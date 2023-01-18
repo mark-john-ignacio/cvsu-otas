@@ -120,6 +120,24 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="citation_input">Citation</label>
+                                <input type="text" class="form-control" id="citation_input" name="citation_input" placeholder="Enter citation">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="keywords">Keywords</label>
+                                <input type="text" class="form-control" id="keywords" name="keywords" placeholder="Enter keywords">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
                             <div class="form-group col-sm-4">
                                 <label for="status_select">Select Status:</label>
                                 <select class="form-control" id="status_select" name="status">
@@ -129,12 +147,13 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-lg-12">
-<!--                            <div class="form-group text-center">-->
-<!--                                <button class="btn btn-default bg-navy btn-flat">Submit</button>-->
-<!--                                <a href="./?page=profile" class="btn btn-light border btn-flat"> Cancel</a>-->
-<!--                            </div>-->
+                            <div class="form-group text-center" id="submit_and_cancel">
+                                <button class="btn btn-default bg-navy btn-flat">Submit</button>
+                                <a href="./?page=profile" class="btn btn-light border btn-flat"> Cancel</a>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -229,3 +248,4 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
         })
     })
 </script>
+

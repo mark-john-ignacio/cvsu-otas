@@ -81,6 +81,15 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
                             </div>
                         </div>
                     </fieldset>
+                    <?php
+                    include_once 'copy_citation.php';
+                    ?>
+                    <fieldset>
+                        <legend class="text-navy">Keywords:</legend>
+                        <div class="pl-4">
+                            <large><?= isset($keywords) ? html_entity_decode($keywords) : "" ?></large>
+                        </div>
+                    </fieldset>
 
                 </div>
             </div>

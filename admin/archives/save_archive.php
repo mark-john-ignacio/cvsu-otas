@@ -148,6 +148,10 @@ Class Master extends DBConnection {
             $_POST['members'] = htmlentities($_POST['members']);
         if(isset($_POST['status']))
             $_POST['status'] = htmlentities($_POST['status']);
+        if(isset($_POST['citation_input']))
+            $_POST['citation_input'] = htmlentities($_POST['citation_input']);
+        if(isset($_POST['keywords']))
+            $_POST['keywords'] = htmlentities($_POST['keywords']);
         extract($_POST);
         $data = "";
         if(isset($_FILES['pdf']) && !empty($_FILES['pdf']['tmp_name'])){

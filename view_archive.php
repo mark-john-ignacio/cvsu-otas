@@ -50,6 +50,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
                         <img src="<?= validate_image(isset($banner_path) ? $banner_path : "") ?>" alt="Banner Image"
                              id="banner-img" class="img-fluid border bg-white border-0">
                     </center>
+
                     <fieldset>
                         <legend class="text-navy">Project Year:</legend>
                         <div class="pl-4">
@@ -68,7 +69,15 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
                             <large><?= isset($members) ? html_entity_decode($members) : "" ?></large>
                         </div>
                     </fieldset>
-
+                    <?php
+                    include "admin/archives/copy_citation.php";
+                    ?>
+                    <fieldset>
+                        <legend class="text-navy">Keywords:</legend>
+                        <div class="pl-4">
+                            <large><?= isset($keywords) ? html_entity_decode($keywords) : "" ?></large>
+                        </div>
+                    </fieldset>
 
                 </div>
             </div>
