@@ -12,6 +12,7 @@
 		<h3 class="card-title">List of Students</h3>
         <div class="card-tools">
             <a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-sm btn-primary"><span class="fas fa-plus"></span>Add New Student</a>
+            <a href="javascript:void(0)" id="import_excel" class="btn btn-flat btn-sm btn-success mx-"><span class="fas fa-plus"></span>Import from Excel</a>
         </div>
 	</div>
 	<div class="card-body">
@@ -84,6 +85,9 @@
 	$(document).ready(function(){
         $('#create_new').click(function(){
             uni_modal("Register New Student","students/register_student.php")
+        })
+        $('#import_excel').click(function(){
+            uni_modal("Import from Excel","students/import_excel/index.php")
         })
 
 		$('.delete_data').click(function(){
