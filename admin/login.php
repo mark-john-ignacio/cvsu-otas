@@ -70,7 +70,7 @@
               </div>
               <div class="row">
                   <div class="col-8">
-
+                      
                   </div>
                 <!-- /.col -->
                 <div class="">
