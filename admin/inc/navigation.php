@@ -61,7 +61,7 @@
                       <a href="<?php echo base_url ?>admin/?page=curriculum" class="nav-link nav-curriculum">
                         <i class="nav-icon fas fa-scroll"></i>
                         <p>
-                          Program List
+                          Curriculum List
                         </p>
                       </a>
                     </li>
