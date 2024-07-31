@@ -64,35 +64,6 @@ The **Online Thesis Archiving System** is a web application designed to allow st
 3. **Search**: Use the search bar to find specific theses or filter by categories.
 4. **Manage**: Admins can manage users and monitor submissions through the admin panel.
 
-## 📜 Contributing
-
-Contributions are welcome! If you have suggestions or improvements, please follow these steps:
-
-1. **Fork the Repository**: Create a personal copy of the repository on GitHub.
-2. **Create a Branch**: 
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-3. **Make Changes**: Implement your feature or bug fix.
-4. **Commit Changes**:
-   ```bash
-   git commit -am 'Add new feature'
-   ```
-5. **Push to GitHub**:
-   ```bash
-   git push origin feature/your-feature
-   ```
-6. **Create a Pull Request**: Submit a pull request on GitHub with a clear description of your changes.
-
-## 🛠️ Known Issues
-
-- Issue with file uploads exceeding 2MB. (Fix in progress)
-- Search functionality may not be fully optimized for large datasets.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 📞 Contact
 
 For any questions or support, please reach out to:
