@@ -10,6 +10,10 @@
 <div class="card card-outline card-primary">
 	<div class="card-header">
 		<h3 class="card-title">List of Students</h3>
+        <div class="card-tools">
+            <a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-sm btn-primary"><span class="fas fa-plus"></span>Add New Student</a>
+            <a href="javascript:void(0)" id="import_excel" class="btn btn-flat btn-sm btn-success mx-"><span class="fas fa-plus"></span>Import from Excel</a>
+        </div>
 	</div>
 	<div class="card-body">
 		<div class="container-fluid">
@@ -58,12 +62,14 @@
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item view_details" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> view</a>
+				                    <a class="dropdown-item view_details" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
 				                    <div class="dropdown-divider"></div>
 									<?php if($row['status'] != 1): ?>
 				                    <a class="dropdown-item verify_user" href="javascript:void(0)" data-id="<?= $row['id'] ?>"  data-name="<?= $row['email'] ?>"><span class="fa fa-check text-primary"></span> Verify</a>
 				                    <div class="dropdown-divider"></div>
 									<?php endif; ?>
+                                      <a class="dropdown-item" href="?page=students/manage_students&id=<?php echo $row['id'] ?>"><span class="fas fa-pencil-alt text-primary"></span> Edit</a>
+                                      <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"  data-name="<?= $row['email'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
 				                  </div>
 							</td>
@@ -77,6 +83,13 @@
 </div>
 <script>
 	$(document).ready(function(){
+        $('#create_new').click(function(){
+            uni_modal("Register New Student","students/register_student.php")
+        })
+        $('#import_excel').click(function(){
+            uni_modal("Import from Excel","students/import_excel/index.php")
+        })
+
 		$('.delete_data').click(function(){
 			_conf("Are you sure to delete <b>"+$(this).attr('data-name')+"</b> from Student List permanently?","delete_user",[$(this).attr('data-id')])
 		})

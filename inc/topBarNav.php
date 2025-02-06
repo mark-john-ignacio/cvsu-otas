@@ -37,6 +37,9 @@
             width: 25em;
             left: -20em;
         }
+        #top-Nav a.nav-link.active:before{
+            left: 0;
+        }
 
         #login-nav {
 
@@ -48,31 +51,33 @@
 <nav class="bg-navy w-100 px-2 py-1 position-fixed top-0" id="login-nav">
     <div class="d-flex justify-content-between w-100">
         <div>
-            <span class="mr-2  text-white"><i class="fa fa-phone mr-1"></i> <?= $_settings->info('contact') ?></span>
+            <?php if ($_settings->userdata('id') == 9999):?>
+            <a href="<?= base_url . '/admin' ?>" class="text-white">Dashboard</a>
+            <?php endif; ?>
         </div>
         <div>
-            <?php if ($_settings->userdata('id') > 0): ?>
-                <span class="mx-2"><img src="<?= validate_image($_settings->userdata('avatar')) ?>" alt="User Avatar"
-                                        id="student-img-avatar"></span>
-                <span class="mx-2">Howdy, <?= !empty($_settings->userdata('email')) ? $_settings->userdata('email') : $_settings->userdata('username') ?></span>
+            <?php if ($_settings->userdata('id') > 0):?>
+                <span class="mx-2"><a href="./?page=profile"><img src="<?= validate_image($_settings->userdata('avatar')) ?>" alt="User Avatar"
+                                        id="student-img-avatar"></a></span>
+                <span class="mx-2 d-none d-md-inline-block">Hello! <?= !empty($_settings->userdata('email')) ? $_settings->userdata('email') : $_settings->userdata('username') ?></span>
                 <span class="mx-1"><a href="<?= base_url . 'classes/Login.php?f=student_logout' ?>"><i
-                                class="fa fa-power-off"></i></a></span>
+                                class="fas fa-power-off"></i></a></span>
             <?php else: ?>
 
 
-                <a href="./register.php" class="mx-2 text-light me-2 ">
-
-                      <span class="d-inline-block d-md-none">
-                        <i class="fas fa-light fa-user-plus"></i>
-                      </span>
-                    <span class="d-none d-md-inline-block">Register</span>
-
-                </a>
+<!--                <a href="./register.php" class="mx-2 text-light me-2 ">-->
+<!---->
+<!--                      <span class="d-inline-block d-md-none">-->
+<!--                        <i class="fas fa-light fa-user-plus"></i>-->
+<!--                      </span>-->
+<!--                    <span class="d-none d-md-inline-block" id="accountNotHere">Register</span>-->
+<!---->
+<!--                </a>-->
                 <a href="./login.php" class="mx-2 text-light me-2">
                     <span class="d-inline-block d-md-none">
                         <i class="fas fa-light fa-user"></i>
                       </span>
-                    <span class="d-none d-md-inline-block">Student Log-in</span>
+                    <span class="d-none d-md-inline-block" id="accountNotHere">Student Log-in</span>
                 </a>
 
                 <a href="./admin" class="mx-2 text-light">
@@ -91,7 +96,7 @@
     <div class="container">
         <a href="./" class="navbar-brand">
             <img src="<?php echo validate_image($_settings->info('logo')) ?>" alt="Site Logo"
-                 class="brand-image img-circle elevation-3" style="opacity: .8">
+                 class="brand-image" style="opacity: .8">
             <span><?= $_settings->info('short_name') ?></span>
         </a>
 
@@ -153,10 +158,7 @@
                         <?php endwhile; ?>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="./?page=about" class="nav-link <?= isset($page) && $page == 'about' ? "active" : "" ?>">About
-                        Us</a>
-                </li>
+
                 <!-- <li class="nav-item">
                   <a href="#" class="nav-link">Contact</a>
                 </li> -->
@@ -165,18 +167,17 @@
                         <a href="./?page=profile"
                            class="nav-link <?= isset($page) && $page == 'profile' ? "active" : "" ?>">Profile</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="./?page=submit-archive"
-                           class="nav-link <?= isset($page) && $page == 'submit-archive' ? "active" : "" ?>">Submit
-                            Thesis/Capstone</a>
-                    </li>
                 <?php endif; ?>
+                <li class="nav-item">
+                    <a href="./?page=about" class="nav-link <?= isset($page) && $page == 'about' ? "active" : "" ?>">About
+                        Us</a>
+                </li>
             </ul>
 
 
         </div>
         <!-- Right navbar links -->
-        <div class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+        <div class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto mr-2">
             <a href="javascript:void(0)" class="text-navy" id="search_icon"><i class="fa fa-search"></i></a>
             <div class="position-relative">
                 <div id="search-field" class="position-absolute">

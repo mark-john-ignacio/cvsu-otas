@@ -23,6 +23,7 @@ Class Users extends DBConnection {
 				return 4;
 			}
 		}
+
 		$chk = $this->conn->query("SELECT * FROM `users` where username ='{$username}' ".($id>0? " and id!= '{$id}' " : ""))->num_rows;
 		if($chk > 0){
 			return 3;
@@ -129,8 +130,9 @@ Class Users extends DBConnection {
 		$data = '';
 		if(isset($oldpassword)){
 			if(md5($oldpassword) != $this->settings->userdata('password')){
-				return json_encode(array("status"=>'failed',
-										 "msg"=>'Old Password is Incorrect'));
+                return json_encode(array("status"=>'failed',
+										 "msg"=>'Old Password is Incorrect ' )) ;
+
 			}
 		}
 		$chk = $this->conn->query("SELECT * FROM `student_list` where email ='{$email}' ".($id>0? " and id!= '{$id}' " : ""))->num_rows;
@@ -207,7 +209,7 @@ Class Users extends DBConnection {
 						imagedestroy($gdImg);
 						imagedestroy($t_image);
 				}else{
-				$resp['msg'].=" But Image failed to upload due to unkown reason.";
+				$resp['msg'].=" But Image failed to upload due to unknown reason.";
 				}
 			}
 			if(isset($uploaded_img)){
@@ -220,6 +222,94 @@ Class Users extends DBConnection {
 		
 		return  json_encode($resp);
 	}
+
+    public function edit_student(){
+        extract($_POST);
+        $data = '';
+//        if(isset($oldpassword)){
+//            if(md5($oldpassword) != $this->settings->userdata('password')){
+//                return json_encode(array("status"=>'failed',
+//                    "msg"=>'Old Password is Incorrect ' )) ;
+//
+//            }
+//        }
+//        $chk = $this->conn->query("SELECT * FROM `student_list` where email ='{$email}' ".($id>0? " and id!= '{$id}' " : ""))->num_rows;
+//        if($chk > 0){
+//            return 3;
+//            exit;
+//        }
+        foreach($_POST as $k => $v){
+            if(!in_array($k,array('id','oldpassword','cpassword','password'))){
+                if(!empty($data)) $data .=" , ";
+                $data .= " {$k} = '{$v}' ";
+            }
+        }
+        if(!empty($password)){
+            $password = md5($password);
+            if(!empty($data)) $data .=" , ";
+            $data .= " `password` = '{$password}' ";
+        }
+
+        if(!empty($id)){
+            $qry = $this->conn->query("UPDATE student_list set $data where id = {$id}");
+            if($qry){
+                $this->settings->set_flashdata('success','Student User Details successfully updated.');
+                if($id == $this->settings->userdata('id')){
+                    foreach($_POST as $k => $v){
+                        if($k != 'id'){
+                            if(!empty($data)) $data .=" , ";
+                            $this->settings->set_userdata($k,$v);
+                        }
+                    }
+
+                }
+                $resp['status'] = "success";
+            }else{
+                $resp['status'] = "failed";
+                $resp['msg'] = "An error occurred while saving the data. Error: ". $this->conn->error;
+            }
+
+        }
+
+        if(isset($_FILES['img']) && $_FILES['img']['tmp_name'] != ''){
+            $fname = 'uploads/student-'.$id.'.png';
+            $dir_path =base_app. $fname;
+            $upload = $_FILES['img']['tmp_name'];
+            $type = mime_content_type($upload);
+            $allowed = array('image/png','image/jpeg');
+            if(!in_array($type,$allowed)){
+                $resp['msg'].=" But Image failed to upload due to invalid file type.";
+            }else{
+                $new_height = 200;
+                $new_width = 200;
+
+                list($width, $height) = getimagesize($upload);
+                $t_image = imagecreatetruecolor($new_width, $new_height);
+                imagealphablending( $t_image, false );
+                imagesavealpha( $t_image, true );
+                $gdImg = ($type == 'image/png')? imagecreatefrompng($upload) : imagecreatefromjpeg($upload);
+                imagecopyresampled($t_image, $gdImg, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+                if($gdImg){
+                    if(is_file($dir_path))
+                        unlink($dir_path);
+                    $uploaded_img = imagepng($t_image,$dir_path);
+                    imagedestroy($gdImg);
+                    imagedestroy($t_image);
+                }else{
+                    $resp['msg'].=" But Image failed to upload due to unknown reason.";
+                }
+            }
+            if(isset($uploaded_img)){
+                $this->conn->query("UPDATE student_list set `avatar` = CONCAT('{$fname}','?v=',unix_timestamp(CURRENT_TIMESTAMP)) where id = '{$id}' ");
+                if($id == $this->settings->userdata('id')){
+                    $this->settings->set_userdata('avatar',$fname);
+                }
+            }
+        }
+
+        return  json_encode($resp);
+    }
+
 	public function delete_student(){
 		extract($_POST);
 		$avatar = $this->conn->query("SELECT avatar FROM student_list where id = '{$id}'")->fetch_array()['avatar'];
@@ -261,6 +351,9 @@ switch ($action) {
 	case 'save_student':
 		echo $users->save_student();
 	break;
+    case 'edit_student':
+        echo $users->edit_student();
+        break;
 	case 'delete_student':
 		echo $users->delete_student();
 	break;

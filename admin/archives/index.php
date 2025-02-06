@@ -1,3 +1,4 @@
+<?php require_once(realpath(__DIR__ . '/../../') . '/config.php'); ?>
 <style>
     .img-avatar{
         width:45px;
@@ -10,6 +11,9 @@
 <div class="card card-outline card-primary">
 	<div class="card-header">
 		<h3 class="card-title">List of Thesis Archives</h3>
+        <div class="card-tools">
+            <a href="./?page=archives/submit_archive" id="create_new" class="btn btn-flat btn-sm btn-primary"><span class="fas fa-plus"></span>Add New Archive</a>
+        </div>
 	</div>
 	<div class="card-body">
 		<div class="container-fluid">
@@ -67,10 +71,12 @@
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item" href="<?= base_url ?>/?page=view_archive&id=<?php echo $row['id'] ?>" target="_blank"><span class="fa fa-external-link-alt text-gray"></span> View</a>
+				                    <a class="dropdown-item view_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>" data-status="<?php echo $row['status'] ?>"><span class="fa fa-external-link-alt text-gray"></span> View</a>
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item update_status" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>" data-status="<?php echo $row['status'] ?>"><span class="fa fa-check text-dark"></span> Update Status</a>
 									<div class="dropdown-divider"></div>
+                                      <a class="dropdown-item edit_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>" data-status="<?php echo $row['status'] ?>"><span class="fa fa-pen-alt text-dark"></span> Edit</a>
+                                      <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
 				                  </div>
 							</td>
@@ -84,14 +90,17 @@
 </div>
 <script>
 	$(document).ready(function(){
-		$('.verified').click(function(){
-			_conf("Are you sure to verify this enrollee Request?","verified",[$(this).attr('data-id')])
+		$('.view_data').click(function(){
+            uni_modal("View Details","archives/view_archive.php?&id="+$(this).attr('data-id'))
 		})
 		$('.delete_data').click(function(){
 			_conf("Are you sure to delete this project permanently?","delete_archive",[$(this).attr('data-id')])
 		})
 		$('.update_status').click(function(){
             uni_modal("Update Details","archives/update_status.php?id="+$(this).attr('data-id')+"&status="+$(this).attr('data-status'))
+        })
+        $('.edit_data').click(function(){
+            uni_modal("Update Details","archives/submit_archive.php?id="+$(this).attr('data-id'))
         })
 		$('.table td,.table th').addClass('py-1 px-2 align-middle')
 		$('.table').dataTable({

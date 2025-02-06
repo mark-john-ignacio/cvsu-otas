@@ -1,0 +1,54 @@
+@startuml
+
+skinparam component {
+  BackgroundColor White
+  ArrowColor DarkGray
+  BorderColor Black
+  FontName Arial
+}
+
+component "User Interface" as UI
+component "Application Server" as AS
+component "Database" as DB
+
+component "Authentication and Security" as ASEC
+component "Dashboard" as D
+component "Department and Course List Management" as DCLM
+component "Project Document Management" as PDM
+component "Student Management" as SM
+component "Admin and Staff Management" as ASM
+component "System Management" as SYSM
+
+ASM -> ASEC
+D -> ASM
+DCLM -> D
+PDM -> DCLM
+SM -> PDM
+SYSM -> SM
+
+component "Document Submission" as DS
+component "Published Project Management" as PPM
+component "Student Portal" as SP
+component "Search" as S
+
+DS -> DCLM
+PPM -> PDM
+SP -> SM
+S -> SP
+
+ASEC --> UI
+AS --> ASEC
+AS --> DB
+ASEC --> AS
+AS --> D
+AS --> DCLM
+AS --> PDM
+AS --> SM
+AS --> ASM
+AS --> SYSM
+AS --> DS
+AS --> PPM
+AS --> SP
+AS --> S
+
+@enduml
